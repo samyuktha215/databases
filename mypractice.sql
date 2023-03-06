@@ -1,0 +1,11 @@
+CREATE DATABASE Customer;
+USE Customer;
+DROP TABLE IF EXISTS Details;
+DROP TABLE IF EXISTS Product;
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE Details ( CustomerID INTEGER  NOT NULL, Customer_first_name VARCHAR(55) NOT NULL , Customer_last_name VARCHAR(55) NOT NULL , Customer_phno INTEGER NOT NULL, Customer_country VARCHAR(55) NOT NULL , CONSTRAINT PK_Customer  PRIMARY KEY (CustomerID) );
+CREATE TABLE Product ( ProductID INTEGER NOT NULL , Product_name VARCHAR(55) DEFAULT' ' NOT NULL);
+INSERT INTO Details ( CustomerID , Customer_first_name , Customer_last_name , Customer_phno , Customer_country ) VALUES ( 1 , 'samyuktha', 'basam' , 76633647 , 'sweden' );
+INSERT INTO Details ( CustomerID , Customer_first_name , Customer_last_name , Customer_phno , Customer_country ) VALUES ( 2 , 'vengal' , 'pachava' , 707273756 , 'sweden' );
+INSERT INTO Details ( CustomerID , Customer_first_name , Customer_last_name , Customer_phno , Customer_country ) VALUES ( 3 , 'mahesh' , 'basam' , 72543872 , 'India' );
+CREATE TABLE Orders ( OrderID INTEGER NOT NULL , CustomerID INTEGER NOT NULL , OrderDate DATE );
